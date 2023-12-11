@@ -1,1 +1,1 @@
-# budget-calculator
+#Income Expenditure Calculator
