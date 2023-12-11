@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Income and Expenditure Bar Graph</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    /* CSS styles for the chart container */
+    #chartContainer {
+      width: 600px;
+      height: 400px;
+      margin: 20px auto;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div id="chartContainer">
+    <canvas id="myChart"></canvas>
+  </div>
+
+  <script>
+    // Sample data for income and expenditure
+    const labels = ['January'];
+    const incomeData = [2000];
+    const expenditureData = [1500];
+
+    // Create a bar chart
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Income',
+          data: incomeData,
+          backgroundColor: 'rgba(0, 128, 0, 0.6)',
+          borderWidth: 1
+        }, {
+          label: 'Expenditure',
+          data: expenditureData,
+          backgroundColor: 'rgba(255, 0, 0, 0.6)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          x: {
+            stacked: true,
+          },
+          y: {
+            stacked: true,
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
